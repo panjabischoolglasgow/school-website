@@ -2319,3 +2319,94 @@ img.zoomable:hover {
     line-height: 1;
     cursor: pointer;
 }
+
+
+/* =========================================================
+   COMPACT FOOTER (same on every page)
+   ========================================================= */
+footer.main-footer {
+    padding: 25px 20px 15px;
+    margin-top: 40px;
+}
+
+.footer-compact {
+    gap: 20px 60px;
+    justify-content: center;
+}
+
+.footer-compact .footer-col h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #C89B2B;
+}
+
+.footer-compact .footer-col p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-links p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+}
+
+footer.main-footer .footer-bottom {
+    margin-top: 18px;
+    padding-top: 12px;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HEADER: SCHOOL NAME ON THE LEFT, LOGO ON THE RIGHT
+   ========================================================= */
+.top .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "title logo"
+        "nav   nav";
+    align-items: center;
+    column-gap: 20px;
+    padding-top: 15px;
+}
+
+.top .school-title {
+    grid-area: title;
+    margin-left: 0;
+}
+
+.top .school-logo {
+    grid-area: logo;
+}
+
+.top .school-logo img {
+    width: 85px;
+    height: auto;
+}
+
+.top nav {
+    grid-area: nav;
+}
+
+@media (max-width: 600px) {
+    .top .school-title h1 {
+        font-size: 22px;
+    }
+
+    .top .school-logo img {
+        width: 65px;
+    }
+}
+
+/* Fit the menu on one line on laptops/desktops */
+.top nav {
+    gap: 2px;
+    padding: 8px 0 12px;
+}
+
+.top nav a {
+    padding: 9px 11px;
+    font-size: 15px;
+}
