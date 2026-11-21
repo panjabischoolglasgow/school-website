@@ -2410,3 +2410,17 @@ footer.main-footer .footer-bottom {
     padding: 9px 11px;
     font-size: 15px;
 }
+
+/* Small | separator between footer links */
+.footer-links p {
+    gap: 6px 0;
+}
+
+.footer-links a + a::before {
+    content: "|";
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: normal;
+    margin: 0 12px;
+    display: inline-block;
+    text-decoration: none;
+}
