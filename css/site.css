@@ -1,4 +1,9 @@
 /* =========================================================
+   PUNJABI SCHOOL GLASGOW - MAIN STYLESHEET
+   One stylesheet for every page.
+   ========================================================= */
+
+/* =========================================================
    GURDWARA GURU GRANTH SAHIB PUNJABI SCHOOL
    MASTER STYLESHEET
    Cleaned and consolidated version
@@ -154,7 +159,7 @@ header {
 
 .school-logo img {
     width: 100px;
-    height: 50;
+    height: auto;
 }
 
 .school-title {
@@ -418,11 +423,6 @@ main {
     margin-bottom: 18px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 /* =========================
    FEATURE / QUICK CARDS
 ========================= */
@@ -1387,6 +1387,143 @@ footer a:hover {
 }
 
 /* =========================
+   PRINT
+========================= */
+
+@media print {
+
+    header,
+    footer,
+    .menu-btn,
+    .side-menu,
+    .menu-overlay,
+    #topBtn {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+}
+
+
+/* =========================================================
+   HOME PAGE FIXES
+   These rules are shared through the external stylesheet.
+========================================================= */
+
+/* Home page header/navigation */
+.top {
+    margin: 0;
+    padding: 0;
+    background: #0B2D5C;
+    color: #fff;
+}
+
+.top nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+    padding: 10px 0 15px;
+}
+
+.top nav a {
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 10px 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.top nav a:hover {
+    color: #fff !important;
+    background: #C89B2B;
+    border-radius: 4px;
+}
+
+/* Home page heritage section */
+.home-heritage-strip {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.home-heritage-box {
+    flex: 1;
+    text-align: center;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+}
+
+.home-heritage-box h3 {
+    margin-top: 0;
+    color: #0B2D5C;
+}
+
+.home-heritage-box p {
+    margin-bottom: 0;
+    color: #222;
+}
+
+/* Home page footer */
+.home-footer {
+    text-align: center;
+}
+
+.home-footer .footer-container {
+    justify-content: center;
+    text-align: center;
+}
+
+.home-footer .footer-section {
+    text-align: center;
+}
+
+.home-footer .footer-bottom {
+    text-align: center;
+}
+
+.home-footer a {
+    text-decoration: none !important;
+}
+
+/* Make footer links consistent across the site */
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .top nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .top nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-heritage-strip {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* =========================
    PHOTO LIBRARY
 ========================= */
 
@@ -1477,49 +1614,79 @@ footer a:hover {
     }
 
 }
-
-/* =========================
-   PRINT
-========================= */
-
-@media print {
-
-    header,
-    footer,
-    .menu-btn,
-    .side-menu,
-    .menu-overlay,
-    #topBtn {
-        display: none !important;
-    }
-
-    body {
-        background: #fff;
-        color: #000;
-    }
-}
-
 /* =========================================================
    END OF MASTER STYLESHEET
 ========================================================= */
-/* =========================================
-   HOME PAGE POSTER
-   ========================================= */
 
-.home-poster {
-    max-width: 900px;
-    margin: 30px auto;
-    text-align: center;
+
+/* =========================
+   FEATURED ANNOUNCEMENT (image left, details right)
+========================== */
+.announcement-feature {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid #e5d3a3;
+    text-align: left;
 }
 
-.home-poster img {
-    width: 100%;
+.announcement-feature img {
+    width: 40%;
+    max-width: 340px;
     height: auto;
-    max-height: 220px;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 3px solid #c89b2b;
+    flex-shrink: 0;
 }
+
+.announcement-feature-text {
+    flex: 1;
+}
+
+.announcement-feature-label {
+    display: inline-block;
+    background: #c89b2b;
+    color: #fff;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 0 0 10px;
+}
+
+.announcement-feature-text h3 {
+    margin: 0 0 12px;
+}
+
+.announcement-feature-details {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.announcement-feature-details li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 700px) {
+    .announcement-feature {
+        flex-direction: column;
+    }
+
+    .announcement-feature img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Keep images inside their boxes on every page */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 /* =========================================
    IMPORTANT ANNOUNCEMENTS
    ========================================= */
@@ -1644,4 +1811,248 @@ footer a:hover {
         text-align: center;
     }
 
+}
+
+
+/* =========================================================
+   CALENDAR PAGE
+   ========================================================= */
+/* =========================================
+   CALENDAR PAGE
+========================================= */
+
+.calendar-page {
+    padding: 50px 20px;
+    background: #f5f7fa;
+}
+
+.calendar-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.calendar-intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.calendar-intro h1 {
+    color: #0B2D5C;
+    margin-bottom: 15px;
+}
+
+.calendar-intro p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* IMPORTANT DATES */
+
+.important-dates {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    margin-bottom: 45px;
+}
+
+.important-dates h2 {
+    color: #0B2D5C;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.date-card {
+    background: #f5f7fa;
+    border-left: 5px solid #C89B2B;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.date-card h3 {
+    color: #0B2D5C;
+    margin-bottom: 8px;
+}
+
+.date-card .date {
+    font-weight: bold;
+    font-size: 18px;
+    color: #C89B2B;
+    margin-bottom: 8px;
+}
+
+
+/* DOCUMENT SECTIONS */
+
+.document-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    margin-bottom: 40px;
+}
+
+.document-section h2 {
+    color: #0B2D5C;
+    margin-bottom: 15px;
+}
+
+.document-section p {
+    line-height: 1.7;
+}
+
+
+/* BUTTONS */
+
+.calendar-button {
+    display: inline-block;
+    background: #0B2D5C;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.calendar-button:hover {
+    background: #C89B2B;
+    color: white;
+}
+
+
+/* AQA */
+
+.aqa-section {
+    border-top: 6px solid #C89B2B;
+}
+
+.exam-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.exam-table th {
+    background: #0B2D5C;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+.exam-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.exam-table tr:nth-child(even) {
+    background: #f5f7fa;
+}
+
+.exam-note {
+    background: #fff8e6;
+    border-left: 5px solid #C89B2B;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 6px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .calendar-page {
+        padding: 30px 15px;
+    }
+
+    .important-dates,
+    .document-section {
+        padding: 25px;
+    }
+
+    .exam-table {
+        font-size: 14px;
+    }
+
+    .exam-table th,
+    .exam-table td {
+        padding: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   POLICIES PAGE
+   (only applies to the Policies page)
+   ========================================================= */
+
+body.policies-page .section-title {
+    text-align:center;
+    color:#0b2d5c;
+    margin-bottom:10px;
+}
+
+body.policies-page .policy-intro {
+    text-align:center;
+    margin-bottom:40px;
+}
+
+body.policies-page .policy-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin-bottom:60px;
+}
+
+body.policies-page .policy-card {
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+body.policies-page .policy-card:hover {
+    transform:translateY(-6px);
+}
+
+body.policies-page .policy-card h3 {
+    color:#0b2d5c;
+    margin-bottom:10px;
+}
+
+body.policies-page .policy-card p {
+    color:#555;
+    margin-bottom:20px;
+}
+
+body.policies-page .policy-card a {
+    display:inline-block;
+    background:#0b2d5c;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+body.policies-page .policy-card a:hover {
+    background:#c89b2b;
+}
+
+body.policies-page .download-note {
+    background:#f4f4f4;
+    text-align:center;
+    padding:60px 20px;
+    margin-top:40px;
 }
