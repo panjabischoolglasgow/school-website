@@ -1612,3 +1612,64 @@ footer a:hover {
 /* =========================================================
    END OF MASTER STYLESHEET
 ========================================================= */
+
+
+/* =========================
+   FEATURED ANNOUNCEMENT (image left, details right)
+========================== */
+.announcement-feature {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid #e5d3a3;
+    text-align: left;
+}
+
+.announcement-feature img {
+    width: 40%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #c89b2b;
+    flex-shrink: 0;
+}
+
+.announcement-feature-text {
+    flex: 1;
+}
+
+.announcement-feature-label {
+    display: inline-block;
+    background: #c89b2b;
+    color: #fff;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 0 0 10px;
+}
+
+.announcement-feature-text h3 {
+    margin: 0 0 12px;
+}
+
+.announcement-feature-details {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.announcement-feature-details li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 700px) {
+    .announcement-feature {
+        flex-direction: column;
+    }
+
+    .announcement-feature img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
