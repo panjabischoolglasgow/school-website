@@ -2424,3 +2424,149 @@ footer.main-footer .footer-bottom {
     display: inline-block;
     text-decoration: none;
 }
+
+
+/* =========================================================
+   PHOTO LIBRARY: ALBUM BUTTONS + PHOTO GRID
+   ========================================================= */
+.gallery-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto 10px;
+    line-height: 1.7;
+}
+
+.album-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 25px;
+}
+
+.album-btn {
+    background: #fff;
+    color: #0B2D5C;
+    border: 2px solid #0B2D5C;
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.album-btn span {
+    display: inline-block;
+    background: #C89B2B;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 1px 8px;
+    margin-left: 4px;
+}
+
+.album-btn:hover,
+.album-btn.active {
+    background: #0B2D5C;
+    color: #fff;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 40px;
+}
+
+.photo {
+    position: relative;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ddd;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.photo img,
+.photo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo img.zoomable:hover {
+    transform: scale(1.05);
+}
+
+.photo figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px 12px 8px;
+    background: linear-gradient(transparent, rgba(11, 45, 92, 0.85));
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.photo:hover figcaption {
+    opacity: 1;
+}
+
+.photo-video figcaption {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .album-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+
+/* Lightbox arrows and photo counter */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #C89B2B;
+}
+
+.lightbox-count {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+}
