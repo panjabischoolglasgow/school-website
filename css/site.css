@@ -240,10 +240,8 @@ header {
 
 .hero {
     position: relative;
-    background:
-        linear-gradient(rgba(11,45,92,.70), rgba(11,45,92,.70)),
-        url("../images/sports day 2024.png") center center / cover;
-    min-height: 550px;
+    background: linear-gradient(135deg, #0B2D5C, #C89B2B);
+    padding: 55px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,12 +249,6 @@ header {
     color: #fff;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.15);
-}
 
 .hero-content {
     position: relative;
@@ -2055,4 +2047,32 @@ body.policies-page .download-note {
     text-align:center;
     padding:60px 20px;
     margin-top:40px;
+}
+
+
+/* =========================================================
+   POSTERS (keep them a sensible size)
+   ========================================================= */
+.home-poster {
+    max-width: 700px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.home-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+.virsa-poster {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 25px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
 }
