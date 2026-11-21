@@ -2139,3 +2139,37 @@ body.policies-page .download-note {
         text-align: center;
     }
 }
+
+
+/* =========================================================
+   HOME PAGE: ABOUT WRITING + POSTER SIDE BY SIDE
+   ========================================================= */
+.about-layout {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.about-layout .about-card {
+    flex: 1;
+    margin: 0;
+}
+
+.about-layout .home-poster {
+    flex: 0 0 42%;
+    max-width: none;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .about-layout {
+        flex-direction: column;
+    }
+
+    .about-layout .home-poster {
+        flex: none;
+        width: 100%;
+        max-width: 700px;
+    }
+}
